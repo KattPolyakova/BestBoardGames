@@ -1,0 +1,6 @@
+framework module Pods_BestBoardGames {
+  umbrella header "Pods-BestBoardGames-umbrella.h"
+
+  export *
+  module * { export * }
+}

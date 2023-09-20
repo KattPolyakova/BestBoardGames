@@ -1,0 +1,21 @@
+//
+//  GameList.swift
+//  BestBoardGames
+//
+//  Created by Kate on 08.06.2023.
+//
+
+import Foundation
+import UIKit
+
+struct Game: Codable {
+    let name: String
+    let gameId: Int
+    let yearPublished: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case name
+        case gameId
+        case yearPublished
+       }
+}
