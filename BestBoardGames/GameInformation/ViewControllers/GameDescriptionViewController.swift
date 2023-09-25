@@ -98,8 +98,6 @@ class GameDescriptionViewController: UIViewController {
             make.right.equalToSuperview()
         }
     }
-    
-    
 }
 
 extension GameDescriptionViewController {

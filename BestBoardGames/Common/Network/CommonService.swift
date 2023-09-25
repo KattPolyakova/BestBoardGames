@@ -16,7 +16,7 @@ class CommonService<T: Decodable> {
         self.urlString = urlString
     }
     
-   func parseJSON(withData data: Data) -> T? {
+   private func parseJSON(withData data: Data) -> T? {
             let decoder = JSONDecoder()
             do {
                 let t = try decoder.decode(T.self, from: data)

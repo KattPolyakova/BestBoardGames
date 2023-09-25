@@ -13,10 +13,13 @@ class TableViewDataSource: NSObject, UITableViewDataSource {
     var savedGames: [Game] = []
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-        cell.textLabel?.text = savedGames[indexPath.row].name
-        cell.backgroundColor = .clear
-        cell.textLabel?.textColor = .orange
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as? CustomTableViewCell else { return UITableViewCell() }
+        let game = savedGames[indexPath.row]
+        cell.configure(game: CustomTableViewCell.ViewModel(
+            name: game.name,
+            yearPublished: game.yearPublished,
+            imageString: game.imageString
+        ))
        return cell
     }
     
@@ -29,4 +32,6 @@ class TableViewDataSource: NSObject, UITableViewDataSource {
           return 0
        }
     }
+    
+    
 }

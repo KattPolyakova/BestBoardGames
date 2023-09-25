@@ -15,6 +15,9 @@ class MyViewController: UIViewController {
     lazy var tableViewDataSource = TableViewDataSource()
     lazy var tableViewDelegate = TableViewDelegate(delegate: self)
     
+    lazy var skeletonTableViewDataSource = SkeletonTableViewDataSource()
+    lazy var skeletonTableViewDelegate = SkeletonTableViewDelegate()
+    
     private let service = GameListService()
     
     
@@ -23,14 +26,17 @@ class MyViewController: UIViewController {
         
         self.view.addSubview(tableView)
         
-        tableView.dataSource = tableViewDataSource
-        tableView.delegate = tableViewDelegate
+        tableView.dataSource = skeletonTableViewDataSource
+        tableView.delegate = skeletonTableViewDelegate
+       
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [self] in
+            self.service.fetchInformation(with: "", completion: fillData)
+        }
 
         
-        service.fetchInformation(with: "", completion: fillData)
+        tableView.backgroundColor = UIColor(hex: 0xD9D9D9)
         
-        
-        tableView.backgroundColor = .black
         tableView.snp.makeConstraints { (make) -> Void in
             
             make.bottom.left.right.top.equalToSuperview()
@@ -39,13 +45,16 @@ class MyViewController: UIViewController {
         self.navigationItem.title = "Games"
         
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.orange]
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
         
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+        self.tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "CustomTableViewCell")
+        self.tableView.register(SkeletonViewCell.self, forCellReuseIdentifier: "SkeletonViewCell")
     }
     
     func fillData(games: [Game]) {
         self.tableViewDataSource.savedGames = games
+        tableView.dataSource = tableViewDataSource
+        tableView.delegate = tableViewDelegate
         self.tableView.reloadData()
     }
 }

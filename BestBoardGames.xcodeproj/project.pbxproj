@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		44295B062A4B00910084B926 /* GameDescriptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44295B052A4B00910084B926 /* GameDescriptionService.swift */; };
+		4432F28D2ABC794200EBA788 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4432F28C2ABC794200EBA788 /* UIColorExtension.swift */; };
+		4432F28F2AC1AEC600EBA788 /* SkeletonViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4432F28E2AC1AEC600EBA788 /* SkeletonViewCell.swift */; };
+		4432F2912AC20E5400EBA788 /* SkeletonTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4432F2902AC20E5400EBA788 /* SkeletonTableViewDataSource.swift */; };
+		4432F2932AC211CE00EBA788 /* SkeletonTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4432F2922AC211CD00EBA788 /* SkeletonTableViewDelegate.swift */; };
 		4453CB922A20A410002B66E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453CB912A20A410002B66E6 /* AppDelegate.swift */; };
 		4453CB942A20A410002B66E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453CB932A20A410002B66E6 /* SceneDelegate.swift */; };
 		4453CB962A20A410002B66E6 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453CB952A20A410002B66E6 /* MyViewController.swift */; };
@@ -27,6 +31,10 @@
 /* Begin PBXFileReference section */
 		0E01DC16C357E63EDEDE24F8 /* Pods-BestBoardGames.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBoardGames.release.xcconfig"; path = "Target Support Files/Pods-BestBoardGames/Pods-BestBoardGames.release.xcconfig"; sourceTree = "<group>"; };
 		44295B052A4B00910084B926 /* GameDescriptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDescriptionService.swift; sourceTree = "<group>"; };
+		4432F28C2ABC794200EBA788 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		4432F28E2AC1AEC600EBA788 /* SkeletonViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonViewCell.swift; sourceTree = "<group>"; };
+		4432F2902AC20E5400EBA788 /* SkeletonTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonTableViewDataSource.swift; sourceTree = "<group>"; };
+		4432F2922AC211CD00EBA788 /* SkeletonTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonTableViewDelegate.swift; sourceTree = "<group>"; };
 		4453CB8E2A20A410002B66E6 /* BestBoardGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BestBoardGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4453CB912A20A410002B66E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4453CB932A20A410002B66E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +111,7 @@
 				4453CB912A20A410002B66E6 /* AppDelegate.swift */,
 				4453CB932A20A410002B66E6 /* SceneDelegate.swift */,
 				4453CB9A2A20A411002B66E6 /* Assets.xcassets */,
+				4432F28C2ABC794200EBA788 /* UIColorExtension.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -140,8 +149,11 @@
 			isa = PBXGroup;
 			children = (
 				44DC112F2AB9A0A100643686 /* CustomTableViewCell.swift */,
+				4432F28E2AC1AEC600EBA788 /* SkeletonViewCell.swift */,
 				44CD30142A30BB150096B2B0 /* TableViewDataSource.swift */,
+				4432F2902AC20E5400EBA788 /* SkeletonTableViewDataSource.swift */,
 				44CD30162A30CE590096B2B0 /* TableViewDelegate.swift */,
+				4432F2922AC211CD00EBA788 /* SkeletonTableViewDelegate.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -325,9 +337,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4432F2912AC20E5400EBA788 /* SkeletonTableViewDataSource.swift in Sources */,
 				4453CB962A20A410002B66E6 /* MyViewController.swift in Sources */,
+				4432F28F2AC1AEC600EBA788 /* SkeletonViewCell.swift in Sources */,
 				44CD30152A30BB150096B2B0 /* TableViewDataSource.swift in Sources */,
 				4453CB922A20A410002B66E6 /* AppDelegate.swift in Sources */,
+				4432F28D2ABC794200EBA788 /* UIColorExtension.swift in Sources */,
 				4479D2552A28966C005F3BB2 /* GameDescriptionViewController.swift in Sources */,
 				44CD30192A3208CC0096B2B0 /* GameInformation.swift in Sources */,
 				44CD30172A30CE590096B2B0 /* TableViewDelegate.swift in Sources */,
@@ -335,6 +350,7 @@
 				4453CB942A20A410002B66E6 /* SceneDelegate.swift in Sources */,
 				44DC112C2AB34D4600643686 /* CommonService.swift in Sources */,
 				44295B062A4B00910084B926 /* GameDescriptionService.swift in Sources */,
+				4432F2932AC211CE00EBA788 /* SkeletonTableViewDelegate.swift in Sources */,
 				44AAD73D2A322085000E6EE0 /* GameList.swift in Sources */,
 				44DC11282AAF4A8B00643686 /* GameListService.swift in Sources */,
 			);
