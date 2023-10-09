@@ -12,12 +12,20 @@
 		4432F28F2AC1AEC600EBA788 /* SkeletonViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4432F28E2AC1AEC600EBA788 /* SkeletonViewCell.swift */; };
 		4432F2912AC20E5400EBA788 /* SkeletonTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4432F2902AC20E5400EBA788 /* SkeletonTableViewDataSource.swift */; };
 		4432F2932AC211CE00EBA788 /* SkeletonTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4432F2922AC211CD00EBA788 /* SkeletonTableViewDelegate.swift */; };
+		4432F2952AC2F83100EBA788 /* FavoritesGamesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4432F2942AC2F83100EBA788 /* FavoritesGamesVC.swift */; };
+		4432F2972AC2F87400EBA788 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4432F2962AC2F87400EBA788 /* ProfileVC.swift */; };
 		4453CB922A20A410002B66E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453CB912A20A410002B66E6 /* AppDelegate.swift */; };
 		4453CB942A20A410002B66E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453CB932A20A410002B66E6 /* SceneDelegate.swift */; };
 		4453CB962A20A410002B66E6 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453CB952A20A410002B66E6 /* MyViewController.swift */; };
 		4453CB9B2A20A411002B66E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4453CB9A2A20A411002B66E6 /* Assets.xcassets */; };
 		4453CB9E2A20A411002B66E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4453CB9C2A20A411002B66E6 /* LaunchScreen.storyboard */; };
+		44661E9E2AC6D0DA00B4C3BD /* NormalProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44661E9D2AC6D0DA00B4C3BD /* NormalProfileView.swift */; };
+		44661EA02AC6D0EE00B4C3BD /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44661E9F2AC6D0EE00B4C3BD /* EditProfileView.swift */; };
 		4479D2552A28966C005F3BB2 /* GameDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4479D2542A28966C005F3BB2 /* GameDescriptionViewController.swift */; };
+		448D96162ACD9BBD00707250 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D96152ACD9BBD00707250 /* ProfileService.swift */; };
+		448D96182ACD9D3C00707250 /* ProfileDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D96172ACD9D3C00707250 /* ProfileDataStore.swift */; };
+		448D961A2ACD9DBA00707250 /* ProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D96192ACD9DBA00707250 /* ProfileData.swift */; };
+		44A28E8B2ACAC92B00059E3F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A28E8A2ACAC92B00059E3F /* TabBarController.swift */; };
 		44AAD73D2A322085000E6EE0 /* GameList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AAD73C2A322085000E6EE0 /* GameList.swift */; };
 		44CD30152A30BB150096B2B0 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CD30142A30BB150096B2B0 /* TableViewDataSource.swift */; };
 		44CD30172A30CE590096B2B0 /* TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CD30162A30CE590096B2B0 /* TableViewDelegate.swift */; };
@@ -35,6 +43,8 @@
 		4432F28E2AC1AEC600EBA788 /* SkeletonViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonViewCell.swift; sourceTree = "<group>"; };
 		4432F2902AC20E5400EBA788 /* SkeletonTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonTableViewDataSource.swift; sourceTree = "<group>"; };
 		4432F2922AC211CD00EBA788 /* SkeletonTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonTableViewDelegate.swift; sourceTree = "<group>"; };
+		4432F2942AC2F83100EBA788 /* FavoritesGamesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesGamesVC.swift; sourceTree = "<group>"; };
+		4432F2962AC2F87400EBA788 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		4453CB8E2A20A410002B66E6 /* BestBoardGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BestBoardGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4453CB912A20A410002B66E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4453CB932A20A410002B66E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,7 +52,13 @@
 		4453CB9A2A20A411002B66E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4453CB9D2A20A411002B66E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4453CB9F2A20A411002B66E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44661E9D2AC6D0DA00B4C3BD /* NormalProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalProfileView.swift; sourceTree = "<group>"; };
+		44661E9F2AC6D0EE00B4C3BD /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		4479D2542A28966C005F3BB2 /* GameDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDescriptionViewController.swift; sourceTree = "<group>"; };
+		448D96152ACD9BBD00707250 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
+		448D96172ACD9D3C00707250 /* ProfileDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataStore.swift; sourceTree = "<group>"; };
+		448D96192ACD9DBA00707250 /* ProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileData.swift; sourceTree = "<group>"; };
+		44A28E8A2ACAC92B00059E3F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		44AAD73C2A322085000E6EE0 /* GameList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameList.swift; sourceTree = "<group>"; };
 		44CD30142A30BB150096B2B0 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		44CD30162A30CE590096B2B0 /* TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +90,41 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		4432F2982AC5B5A400EBA788 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				448D96142ACD9B7D00707250 /* ProfileData */,
+				4432F2992AC5B5C600EBA788 /* ProfileVC */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		4432F2992AC5B5C600EBA788 /* ProfileVC */ = {
+			isa = PBXGroup;
+			children = (
+				4432F2962AC2F87400EBA788 /* ProfileVC.swift */,
+				44661E9D2AC6D0DA00B4C3BD /* NormalProfileView.swift */,
+				44661E9F2AC6D0EE00B4C3BD /* EditProfileView.swift */,
+			);
+			path = ProfileVC;
+			sourceTree = "<group>";
+		};
+		4432F29A2AC5B60700EBA788 /* FavoritesGames */ = {
+			isa = PBXGroup;
+			children = (
+				4432F29B2AC5B61100EBA788 /* FavoritesGamesVC */,
+			);
+			path = FavoritesGames;
+			sourceTree = "<group>";
+		};
+		4432F29B2AC5B61100EBA788 /* FavoritesGamesVC */ = {
+			isa = PBXGroup;
+			children = (
+				4432F2942AC2F83100EBA788 /* FavoritesGamesVC.swift */,
+			);
+			name = FavoritesGamesVC;
+			sourceTree = "<group>";
+		};
 		4453CB852A20A410002B66E6 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +148,8 @@
 			children = (
 				44DC11242AAF496900643686 /* Common */,
 				44CD301D2A320B680096B2B0 /* GameList */,
+				4432F29A2AC5B60700EBA788 /* FavoritesGames */,
+				4432F2982AC5B5A400EBA788 /* Profile */,
 				44CD301E2A320BB70096B2B0 /* GameInformation */,
 				44CD301A2A3209990096B2B0 /* Support */,
 				4453CB9C2A20A411002B66E6 /* LaunchScreen.storyboard */,
@@ -105,11 +158,22 @@
 			path = BestBoardGames;
 			sourceTree = "<group>";
 		};
+		448D96142ACD9B7D00707250 /* ProfileData */ = {
+			isa = PBXGroup;
+			children = (
+				448D96152ACD9BBD00707250 /* ProfileService.swift */,
+				448D96172ACD9D3C00707250 /* ProfileDataStore.swift */,
+				448D96192ACD9DBA00707250 /* ProfileData.swift */,
+			);
+			path = ProfileData;
+			sourceTree = "<group>";
+		};
 		44CD301A2A3209990096B2B0 /* Support */ = {
 			isa = PBXGroup;
 			children = (
 				4453CB912A20A410002B66E6 /* AppDelegate.swift */,
 				4453CB932A20A410002B66E6 /* SceneDelegate.swift */,
+				44A28E8A2ACAC92B00059E3F /* TabBarController.swift */,
 				4453CB9A2A20A411002B66E6 /* Assets.xcassets */,
 				4432F28C2ABC794200EBA788 /* UIColorExtension.swift */,
 			);
@@ -253,7 +317,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					4453CB8D2A20A410002B66E6 = {
 						CreatedOnToolsVersion = 14.3;
@@ -343,16 +407,24 @@
 				44CD30152A30BB150096B2B0 /* TableViewDataSource.swift in Sources */,
 				4453CB922A20A410002B66E6 /* AppDelegate.swift in Sources */,
 				4432F28D2ABC794200EBA788 /* UIColorExtension.swift in Sources */,
+				44A28E8B2ACAC92B00059E3F /* TabBarController.swift in Sources */,
+				4432F2952AC2F83100EBA788 /* FavoritesGamesVC.swift in Sources */,
 				4479D2552A28966C005F3BB2 /* GameDescriptionViewController.swift in Sources */,
+				448D96182ACD9D3C00707250 /* ProfileDataStore.swift in Sources */,
 				44CD30192A3208CC0096B2B0 /* GameInformation.swift in Sources */,
+				44661E9E2AC6D0DA00B4C3BD /* NormalProfileView.swift in Sources */,
+				44661EA02AC6D0EE00B4C3BD /* EditProfileView.swift in Sources */,
 				44CD30172A30CE590096B2B0 /* TableViewDelegate.swift in Sources */,
 				44DC11302AB9A0A100643686 /* CustomTableViewCell.swift in Sources */,
 				4453CB942A20A410002B66E6 /* SceneDelegate.swift in Sources */,
+				4432F2972AC2F87400EBA788 /* ProfileVC.swift in Sources */,
 				44DC112C2AB34D4600643686 /* CommonService.swift in Sources */,
 				44295B062A4B00910084B926 /* GameDescriptionService.swift in Sources */,
 				4432F2932AC211CE00EBA788 /* SkeletonTableViewDelegate.swift in Sources */,
 				44AAD73D2A322085000E6EE0 /* GameList.swift in Sources */,
 				44DC11282AAF4A8B00643686 /* GameListService.swift in Sources */,
+				448D96162ACD9BBD00707250 /* ProfileService.swift in Sources */,
+				448D961A2ACD9DBA00707250 /* ProfileData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +446,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -406,6 +479,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -420,7 +494,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -434,6 +508,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -466,6 +541,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -474,7 +550,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

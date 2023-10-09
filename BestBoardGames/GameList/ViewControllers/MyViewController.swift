@@ -14,6 +14,7 @@ class MyViewController: UIViewController {
     let tableView = UITableView()
     lazy var tableViewDataSource = TableViewDataSource()
     lazy var tableViewDelegate = TableViewDelegate(delegate: self)
+
     
     lazy var skeletonTableViewDataSource = SkeletonTableViewDataSource()
     lazy var skeletonTableViewDelegate = SkeletonTableViewDelegate()
@@ -28,9 +29,9 @@ class MyViewController: UIViewController {
         
         tableView.dataSource = skeletonTableViewDataSource
         tableView.delegate = skeletonTableViewDelegate
+        tableView.isScrollEnabled = false
        
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [self] in
             self.service.fetchInformation(with: "", completion: fillData)
         }
 
@@ -55,6 +56,7 @@ class MyViewController: UIViewController {
         self.tableViewDataSource.savedGames = games
         tableView.dataSource = tableViewDataSource
         tableView.delegate = tableViewDelegate
+        tableView.isScrollEnabled = true
         self.tableView.reloadData()
     }
 }
@@ -69,6 +71,4 @@ extension MyViewController: NavigationDelegate {
         navigationController?.pushViewController(vc, animated: true)
         
     }
-    
-    
 }

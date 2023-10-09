@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 
 struct Game: Codable {
     let name: String
