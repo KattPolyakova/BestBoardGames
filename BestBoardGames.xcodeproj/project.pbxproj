@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		440A1B702AE14230004F935D /* FavoritesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440A1B6F2AE14230004F935D /* FavoritesData.swift */; };
+		440A1B722AE14333004F935D /* FavoritesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440A1B712AE14333004F935D /* FavoritesDataStore.swift */; };
+		440A1B742AE1438D004F935D /* FavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440A1B732AE1438D004F935D /* FavoritesService.swift */; };
 		44295B062A4B00910084B926 /* GameDescriptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44295B052A4B00910084B926 /* GameDescriptionService.swift */; };
 		4432F28D2ABC794200EBA788 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4432F28C2ABC794200EBA788 /* UIColorExtension.swift */; };
 		4432F28F2AC1AEC600EBA788 /* SkeletonViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4432F28E2AC1AEC600EBA788 /* SkeletonViewCell.swift */; };
@@ -38,6 +41,9 @@
 
 /* Begin PBXFileReference section */
 		0E01DC16C357E63EDEDE24F8 /* Pods-BestBoardGames.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBoardGames.release.xcconfig"; path = "Target Support Files/Pods-BestBoardGames/Pods-BestBoardGames.release.xcconfig"; sourceTree = "<group>"; };
+		440A1B6F2AE14230004F935D /* FavoritesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesData.swift; sourceTree = "<group>"; };
+		440A1B712AE14333004F935D /* FavoritesDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesDataStore.swift; sourceTree = "<group>"; };
+		440A1B732AE1438D004F935D /* FavoritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesService.swift; sourceTree = "<group>"; };
 		44295B052A4B00910084B926 /* GameDescriptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDescriptionService.swift; sourceTree = "<group>"; };
 		4432F28C2ABC794200EBA788 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		4432F28E2AC1AEC600EBA788 /* SkeletonViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonViewCell.swift; sourceTree = "<group>"; };
@@ -82,6 +88,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		440A1B6E2AE14205004F935D /* FavoritesData */ = {
+			isa = PBXGroup;
+			children = (
+				440A1B732AE1438D004F935D /* FavoritesService.swift */,
+				440A1B712AE14333004F935D /* FavoritesDataStore.swift */,
+				440A1B6F2AE14230004F935D /* FavoritesData.swift */,
+			);
+			name = FavoritesData;
+			sourceTree = "<group>";
+		};
 		44295B042A4B006B0084B926 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +128,7 @@
 		4432F29A2AC5B60700EBA788 /* FavoritesGames */ = {
 			isa = PBXGroup;
 			children = (
+				440A1B6E2AE14205004F935D /* FavoritesData */,
 				4432F29B2AC5B61100EBA788 /* FavoritesGamesVC */,
 			);
 			path = FavoritesGames;
@@ -401,6 +418,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				440A1B742AE1438D004F935D /* FavoritesService.swift in Sources */,
+				440A1B702AE14230004F935D /* FavoritesData.swift in Sources */,
 				4432F2912AC20E5400EBA788 /* SkeletonTableViewDataSource.swift in Sources */,
 				4453CB962A20A410002B66E6 /* MyViewController.swift in Sources */,
 				4432F28F2AC1AEC600EBA788 /* SkeletonViewCell.swift in Sources */,
@@ -423,6 +442,7 @@
 				4432F2932AC211CE00EBA788 /* SkeletonTableViewDelegate.swift in Sources */,
 				44AAD73D2A322085000E6EE0 /* GameList.swift in Sources */,
 				44DC11282AAF4A8B00643686 /* GameListService.swift in Sources */,
+				440A1B722AE14333004F935D /* FavoritesDataStore.swift in Sources */,
 				448D96162ACD9BBD00707250 /* ProfileService.swift in Sources */,
 				448D961A2ACD9DBA00707250 /* ProfileData.swift in Sources */,
 			);

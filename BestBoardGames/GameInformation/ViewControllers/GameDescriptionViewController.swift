@@ -45,9 +45,17 @@ class GameDescriptionViewController: UIViewController {
         stackView.spacing = Constants.stackViewSpacing
         return stackView
     }()
+    lazy var favoriteButton: UIBarButtonItem = {
+        let button = UIBarButtonItem()
+        button.target = self
+        button.action = #selector(addFavorites)
+        return button
+    }()
+    
     private let nameAndRatingView = UIView()
     private let scrollView = UIScrollView()
     private let service = GameDescriptionService()
+    private let favoritesService = FavoritesService()
 
     
     override func viewDidLoad() {
@@ -57,7 +65,16 @@ class GameDescriptionViewController: UIViewController {
         view.backgroundColor = .black
         addSubViews()
         addConstraints()
+        
+        if favoritesService.checkFavorites(data: .init(gameId: gameId)) {
+            favoriteButton.image = UIImage(named: "heart_full")
+        } else {
+            favoriteButton.image = UIImage(named: "heart_empty")
+        }
+        
+        
     }
+    
     
     func fillData(gameInformation: GameInformation) {
         self.nameLabel.text = gameInformation.name
@@ -75,8 +92,11 @@ class GameDescriptionViewController: UIViewController {
         stackView.addArrangedSubview(nameAndRatingView)
         stackView.addArrangedSubview(descriptionLabel)
         stackView.addArrangedSubview(UIView())
+        navigationItem.setRightBarButtonItems([favoriteButton], animated: true)
         view.addSubview(scrollView)
     }
+    
+
     
     private func addConstraints() {
         scrollView.snp.makeConstraints { make in
@@ -98,6 +118,17 @@ class GameDescriptionViewController: UIViewController {
             make.right.equalToSuperview()
         }
     }
+    
+    @objc func addFavorites(sender: UIButton) {
+        
+        if favoritesService.checkFavorites(data: .init(gameId: gameId)) {
+            favoriteButton.image = UIImage(named: "heart_empty")
+            favoritesService.removeFavorites(data: .init(gameId: gameId))
+        } else {
+            favoriteButton.image = UIImage(named: "heart_full")
+            favoritesService.sendFavoritesData(data: .init(gameId: gameId))
+        }
+    }
 }
 
 extension GameDescriptionViewController {
@@ -107,3 +138,5 @@ extension GameDescriptionViewController {
         static let titleFont = UIFont(name: ".SFUI-Regular", size: 25)
     }
 }
+
+

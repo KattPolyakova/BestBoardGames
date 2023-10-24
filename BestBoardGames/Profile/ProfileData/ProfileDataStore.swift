@@ -10,4 +10,5 @@ import UIKit
 class ProfileDataStore {
     
     static var data: ProfileData?
+
 }
