@@ -22,20 +22,19 @@ class GameDescriptionViewController: UIViewController {
     }()
     private let nameLabel = {
         let nameLabel = UILabel()
-        nameLabel.textColor = .orange
+        nameLabel.textColor = .black
         nameLabel.font = Constants.titleFont
         nameLabel.numberOfLines = .zero
         return nameLabel
     }()
     private let ratingLabel = {
         let ratingLabel = UILabel()
-        ratingLabel.textColor = .orange
         ratingLabel.font = Constants.titleFont
         return ratingLabel
     }()
     private let descriptionLabel = {
         let descriptionLabel = UILabel()
-        descriptionLabel.textColor = .white
+        descriptionLabel.textColor = .black
         descriptionLabel.numberOfLines = .zero
         return descriptionLabel
     }()
@@ -52,6 +51,13 @@ class GameDescriptionViewController: UIViewController {
         return button
     }()
     
+    private let stackView2 = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = Constants.stackViewSpacing2
+        return stackView
+    }()
+    
     private let nameAndRatingView = UIView()
     private let scrollView = UIScrollView()
     private let service = GameDescriptionService()
@@ -62,7 +68,7 @@ class GameDescriptionViewController: UIViewController {
         super.viewDidLoad()
         
         service.fetchInformation(with: String(gameId), completion: fillData)
-        view.backgroundColor = .black
+        view.backgroundColor = .white
         addSubViews()
         addConstraints()
         
@@ -79,9 +85,18 @@ class GameDescriptionViewController: UIViewController {
     func fillData(gameInformation: GameInformation) {
         self.nameLabel.text = gameInformation.name
         self.ratingLabel.text = String(format: "%.2f", gameInformation.rating)
+        self.ratingLabel.textColor = getColor(by: gameInformation.rating)
         self.descriptionLabel.text = gameInformation.description
         let url = URL(string: gameInformation.image)
         self.image.kf.setImage(with: url)
+    }
+    
+    func getColor(by rating: Double) -> UIColor {
+        switch rating {
+        case 0..<6: return UIColor(hex: 0xC23535)
+        case 6..<8: return UIColor(hex: 0xC0C235)
+        default: return UIColor(hex: 0x37C235)
+        }
     }
     
     private func addSubViews() {
@@ -89,9 +104,10 @@ class GameDescriptionViewController: UIViewController {
         nameAndRatingView.addSubview(ratingLabel)
         scrollView.addSubview(stackView)
         stackView.addArrangedSubview(image)
-        stackView.addArrangedSubview(nameAndRatingView)
-        stackView.addArrangedSubview(descriptionLabel)
-        stackView.addArrangedSubview(UIView())
+        stackView.addArrangedSubview(stackView2)
+        stackView2.addArrangedSubview(nameAndRatingView)
+        stackView2.addArrangedSubview(descriptionLabel)
+        stackView2.addArrangedSubview(UIView())
         navigationItem.setRightBarButtonItems([favoriteButton], animated: true)
         view.addSubview(scrollView)
     }
@@ -107,7 +123,13 @@ class GameDescriptionViewController: UIViewController {
             make.width.equalTo(view)
         }
         image.snp.makeConstraints { make in
+            make.right.left.equalToSuperview()
             make.height.equalTo(Constants.imageHeight)
+        }
+        
+        stackView2.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(15)
+            make.right.equalToSuperview().offset(-15)
         }
         nameLabel.snp.makeConstraints { (make) -> Void in
             make.left.top.bottom.equalToSuperview()
@@ -135,6 +157,7 @@ extension GameDescriptionViewController {
     enum Constants {
         static let imageHeight = 400
         static let stackViewSpacing: CGFloat = 20
+        static let stackViewSpacing2: CGFloat = 10
         static let titleFont = UIFont(name: ".SFUI-Regular", size: 25)
     }
 }
