@@ -21,7 +21,6 @@ class MyViewController: UIViewController {
     
     private let service = GameListService()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,12 +43,15 @@ class MyViewController: UIViewController {
         }
         
         self.navigationItem.title = "Games"
-        
-        self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
         
         self.tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "CustomTableViewCell")
         self.tableView.register(SkeletonViewCell.self, forCellReuseIdentifier: "SkeletonViewCell")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     func fillData(games: [Game]) {

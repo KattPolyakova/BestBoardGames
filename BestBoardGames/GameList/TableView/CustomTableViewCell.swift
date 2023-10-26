@@ -37,6 +37,8 @@ class CustomTableViewCell: UITableViewCell {
         nameLabel.textColor = .black
         nameLabel.font = UIFont(name: "Arial", size: 24)
         yearPublishedLabel.textColor = .gray
+        gameImageView.contentMode = .scaleAspectFill
+        gameImageView.clipsToBounds = true
         view.backgroundColor = .white
         view.layer.cornerRadius = 10
         view.clipsToBounds = true

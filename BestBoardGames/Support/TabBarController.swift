@@ -20,8 +20,9 @@ class TabBarController: UITabBarController {
 
     
     // 2 controller
-    let favorites: FavoritesGamesVC = {
-        let favorites = FavoritesGamesVC()
+    let favorites: UINavigationController = {
+        let favorites = UINavigationController()
+        favorites.viewControllers = [FavoritesGamesVC()]
         favorites.tabBarItem.title = "Favorites"
         favorites.tabBarItem.image = UIImage(named:"favorite")
         return favorites

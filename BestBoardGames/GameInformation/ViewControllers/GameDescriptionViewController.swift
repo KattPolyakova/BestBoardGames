@@ -69,17 +69,23 @@ class GameDescriptionViewController: UIViewController {
         
         service.fetchInformation(with: String(gameId), completion: fillData)
         view.backgroundColor = .white
+        
         addSubViews()
         addConstraints()
+        
+        self.navigationItem.largeTitleDisplayMode = .never
         
         if favoritesService.checkFavorites(data: .init(gameId: gameId)) {
             favoriteButton.image = UIImage(named: "heart_full")
         } else {
             favoriteButton.image = UIImage(named: "heart_empty")
         }
-        
-        
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        self.navigationController?.navigationBar.prefersLargeTitles = false
+//    }
     
     
     func fillData(gameInformation: GameInformation) {
