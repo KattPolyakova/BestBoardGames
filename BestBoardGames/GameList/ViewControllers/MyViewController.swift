@@ -8,11 +8,14 @@
 import UIKit
 import SnapKit
 import Alamofire
-
+class TableViewDataSource2 {
+    
+}
 class MyViewController: UIViewController {
     
     let tableView = UITableView()
     lazy var tableViewDataSource = TableViewDataSource()
+    lazy var tableViewDataSource2 = TableViewDataSource2()
     lazy var tableViewDelegate = TableViewDelegate(delegate: self)
 
     
@@ -61,6 +64,17 @@ class MyViewController: UIViewController {
         tableView.isScrollEnabled = true
         self.tableView.reloadData()
     }
+    
+//    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//            let item = UIContextualAction(style: .destructive, title: "Delete") {  (contextualAction, view, boolValue) in
+//                //Write your code in here
+//            }
+//            item.image = UIImage(named: "heart_empty")
+//
+//            let swipeActions = UISwipeActionsConfiguration(actions: [item])
+//        
+//            return swipeActions
+//        }
 }
 
 
@@ -70,7 +84,6 @@ extension MyViewController: NavigationDelegate {
         
         let vc = GameDescriptionViewController()
         vc.gameId = tableViewDataSource.savedGames[row].gameId
-        navigationController?.pushViewController(vc, animated: true)
-        
+        navigationController?.pushViewController(vc, animated: true)   
     }
 }

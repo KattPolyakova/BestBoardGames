@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                         
             let tabBarController = TabBarController() // 0x1257
             
-            tabBarController.viewControllers = [tabBarController.favorites, tabBarController.gameList, tabBarController.profile]
+            tabBarController.viewControllers = [tabBarController.gameList, tabBarController.favorites, tabBarController.profile]
             
             window.rootViewController = tabBarController
             self.window = window

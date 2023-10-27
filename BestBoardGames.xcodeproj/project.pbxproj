@@ -242,8 +242,8 @@
 			children = (
 				44DC112F2AB9A0A100643686 /* CustomTableViewCell.swift */,
 				4432F28E2AC1AEC600EBA788 /* SkeletonViewCell.swift */,
-				44CD30142A30BB150096B2B0 /* TableViewDataSource.swift */,
 				4432F2902AC20E5400EBA788 /* SkeletonTableViewDataSource.swift */,
+				44CD30142A30BB150096B2B0 /* TableViewDataSource.swift */,
 				44CD30162A30CE590096B2B0 /* TableViewDelegate.swift */,
 				4432F2922AC211CD00EBA788 /* SkeletonTableViewDelegate.swift */,
 			);

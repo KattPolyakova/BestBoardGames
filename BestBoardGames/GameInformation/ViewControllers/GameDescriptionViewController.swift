@@ -60,7 +60,7 @@ class GameDescriptionViewController: UIViewController {
     
     private let nameAndRatingView = UIView()
     private let scrollView = UIScrollView()
-    private let service = GameDescriptionService()
+    let service = GameDescriptionService()
     private let favoritesService = FavoritesService()
 
     
