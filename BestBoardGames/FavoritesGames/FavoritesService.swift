@@ -18,6 +18,14 @@ class FavoritesService {
 //        return data
 //    }
     
+    var gameCount: Int {
+        let count = UserDefaults.standard.array(forKey: "gameId")?.count
+        UserDefaults.standard.array(forKey: "gameId")?.forEach({ item in
+            print(item)
+        })
+        return count ?? 0
+    }
+    
     func sendFavoritesData(data: FavoritesData) { // сохранение данных
         //gameID
         

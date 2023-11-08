@@ -26,13 +26,18 @@ class SkeletonViewCell: UITableViewCell {
     
     private func configCell() {
         backgroundColor = UIColor(hex: 0xD9D9D9)
+        
         nameLabelSkeleton.backgroundColor = UIColor(hex: 0xC4C4C4)
         nameLabelSkeleton.layer.cornerRadius = 10
+        
         nameLabelSkeleton2.backgroundColor = UIColor(hex: 0xC4C4C4)
         nameLabelSkeleton2.layer.cornerRadius = 10
+        
         yearPublishedLabelSkeleton.backgroundColor = UIColor(hex: 0xEFEFEF)
         yearPublishedLabelSkeleton.layer.cornerRadius = 10
+        
         gameImageViewSkeleton.backgroundColor =  UIColor(hex: 0xC4C4C4)
+        
         viewSkeleton.backgroundColor = .white
         viewSkeleton.layer.cornerRadius = 10
         viewSkeleton.clipsToBounds = true

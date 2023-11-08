@@ -34,6 +34,7 @@ class FavoriteGameCell: UICollectionViewCell {
         gameImageView.clipsToBounds = true
         nameLabel.textColor = .black
         nameLabel.font = UIFont(name: "Arial", size: 24)
+        nameLabel.numberOfLines = 2
         self.layer.cornerRadius = 10
         self.clipsToBounds = true
         
@@ -42,13 +43,13 @@ class FavoriteGameCell: UICollectionViewCell {
         
         gameImageView.snp.makeConstraints { make in
             make.left.top.right.equalToSuperview()
-            make.bottom.equalTo(nameLabel.snp.top).offset(-17)
+            make.bottom.equalToSuperview().offset(-72)
         }
         
         nameLabel.snp.makeConstraints { make in
+            make.top.equalTo(gameImageView.snp.bottom).offset(10)
             make.left.equalToSuperview().offset(10)
             make.right.equalToSuperview().offset(-10)
-            make.bottom.equalToSuperview().offset(-10)
         }
     }
     
