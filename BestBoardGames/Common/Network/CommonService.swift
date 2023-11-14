@@ -29,12 +29,14 @@ class CommonService<T: Decodable> {
     
     
     func fetchInformation(with id: String, completion: @escaping (T) -> ()) {
-        AF.request(urlString + id).response { response in   //??
-            
-            if let data = response.data {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [self] in
+            AF.request(urlString + id).response { response in   //??
                 
-                if let object = self.parseJSON(withData: data) {
-                    completion(object)
+                if let data = response.data {
+                    
+                    if let object = self.parseJSON(withData: data) {
+                        completion(object)
+                    }
                 }
             }
         }

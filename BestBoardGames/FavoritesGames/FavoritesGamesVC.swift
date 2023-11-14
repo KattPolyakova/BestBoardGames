@@ -15,6 +15,7 @@ class FavoritesGamesVC: UIViewController {
     private let favoritesService = FavoritesService()
     lazy var collectionViewManager = CollectionViewManager(delegate: self)
     lazy var skeletonCollectionViewManager = SkeletonCollectionViewManager()
+    private let refreshControl = UIRefreshControl()
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,16 +37,15 @@ class FavoritesGamesVC: UIViewController {
         flowLayout.minimumLineSpacing = Constants.minimumItemSpacing
         flowLayout.minimumInteritemSpacing = Constants.minimumItemSpacing
         flowLayout.scrollDirection = .vertical
-
+        
+        self.collectionView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        self.service.fetchInformation(with: "", completion: fillData)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 6) { [self] in
-            self.service.fetchInformation(with: "", completion: fillData)
-        }
     }
     
     func fillData(games: [Game]) {
@@ -60,6 +60,12 @@ class FavoritesGamesVC: UIViewController {
             }
         }
         collectionView.reloadData()
+        self.collectionView.refreshControl?.endRefreshing()
+    }
+    
+    @objc func refresh(_ sender: AnyObject) {
+        self.service.fetchInformation(with: "", completion: fillData)
+        self.collectionView.reloadData()
     }
 }
 
