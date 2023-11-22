@@ -18,6 +18,7 @@
 		4432F2932AC211CE00EBA788 /* SkeletonTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4432F2922AC211CD00EBA788 /* SkeletonTableViewDelegate.swift */; };
 		4432F2952AC2F83100EBA788 /* FavoritesGamesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4432F2942AC2F83100EBA788 /* FavoritesGamesVC.swift */; };
 		4432F2972AC2F87400EBA788 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4432F2962AC2F87400EBA788 /* ProfileVC.swift */; };
+		4446902C2B0CB2F8007A96FC /* WarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4446902B2B0CB2F8007A96FC /* WarningView.swift */; };
 		4453CB922A20A410002B66E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453CB912A20A410002B66E6 /* AppDelegate.swift */; };
 		4453CB942A20A410002B66E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453CB932A20A410002B66E6 /* SceneDelegate.swift */; };
 		4453CB962A20A410002B66E6 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4453CB952A20A410002B66E6 /* MyViewController.swift */; };
@@ -57,6 +58,7 @@
 		4432F2922AC211CD00EBA788 /* SkeletonTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonTableViewDelegate.swift; sourceTree = "<group>"; };
 		4432F2942AC2F83100EBA788 /* FavoritesGamesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesGamesVC.swift; sourceTree = "<group>"; };
 		4432F2962AC2F87400EBA788 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		4446902B2B0CB2F8007A96FC /* WarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningView.swift; sourceTree = "<group>"; };
 		4453CB8E2A20A410002B66E6 /* BestBoardGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BestBoardGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4453CB912A20A410002B66E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4453CB932A20A410002B66E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +166,14 @@
 			name = FavoritesGamesVC;
 			sourceTree = "<group>";
 		};
+		4446902A2B0CB2C7007A96FC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4446902B2B0CB2F8007A96FC /* WarningView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		4453CB852A20A410002B66E6 = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +242,7 @@
 			children = (
 				44DC11262AAF4A2A00643686 /* Network */,
 				44CD301F2A320C960096B2B0 /* ViewControllers */,
+				4446902A2B0CB2C7007A96FC /* View */,
 				44CD30212A320D320096B2B0 /* Models */,
 				44CD30202A320CC40096B2B0 /* TableView */,
 			);
@@ -475,6 +486,7 @@
 				44DC112C2AB34D4600643686 /* CommonService.swift in Sources */,
 				44295B062A4B00910084B926 /* GameDescriptionService.swift in Sources */,
 				4432F2932AC211CE00EBA788 /* SkeletonTableViewDelegate.swift in Sources */,
+				4446902C2B0CB2F8007A96FC /* WarningView.swift in Sources */,
 				44AAD73D2A322085000E6EE0 /* GameList.swift in Sources */,
 				44DC11282AAF4A8B00643686 /* GameListService.swift in Sources */,
 				440A1B722AE14333004F935D /* FavoritesDataStore.swift in Sources */,

@@ -88,13 +88,17 @@ class GameDescriptionViewController: UIViewController {
 //    }
     
     
-    func fillData(gameInformation: GameInformation) {
-        self.nameLabel.text = gameInformation.name
-        self.ratingLabel.text = String(format: "%.2f", gameInformation.rating)
-        self.ratingLabel.textColor = getColor(by: gameInformation.rating)
-        self.descriptionLabel.text = gameInformation.description
-        let url = URL(string: gameInformation.image)
-        self.image.kf.setImage(with: url)
+    func fillData(completionType: CompletionType<GameInformation>) {
+        switch completionType {
+        case .success(let gameInformation):
+            self.nameLabel.text = gameInformation.name
+            self.ratingLabel.text = String(format: "%.2f", gameInformation.rating)
+            self.ratingLabel.textColor = getColor(by: gameInformation.rating)
+            self.descriptionLabel.text = gameInformation.description
+            let url = URL(string: gameInformation.image)
+            self.image.kf.setImage(with: url)
+        case .error: break
+        }
     }
     
     func getColor(by rating: Double) -> UIColor {

@@ -28,17 +28,21 @@ class CommonService<T: Decodable> {
     }
     
     
-    func fetchInformation(with id: String, completion: @escaping (T) -> ()) {
+    func fetchInformation(with id: String, completion: @escaping (CompletionType<T>) -> ()) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [self] in
+            URLCache.shared.removeAllCachedResponses()
             AF.request(urlString + id).response { response in   //??
-                
-                if let data = response.data {
-                    
-                    if let object = self.parseJSON(withData: data) {
-                        completion(object)
-                    }
+                if let data = response.data, let object = self.parseJSON(withData: data) {
+                    completion(.success(object))
+                } else {
+                    completion(.error("Network error"))
                 }
             }
         }
     }
+}
+
+enum CompletionType<T> {
+    case success(T)
+    case error(String)
 }

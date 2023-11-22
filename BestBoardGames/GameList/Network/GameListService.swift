@@ -17,3 +17,6 @@ class GameListService: CommonService<[Game]> {
 //        "http://bgg-json.azurewebsites.net/hot"
 //    }
 }
+
+
+// http://bgg-json.azurewebsites.net/hot

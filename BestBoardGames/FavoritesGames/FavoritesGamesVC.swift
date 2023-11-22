@@ -48,19 +48,24 @@ class FavoritesGamesVC: UIViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true
     }
     
-    func fillData(games: [Game]) {
-        collectionViewManager.savedGames = []
-        collectionView.dataSource = collectionViewManager
-        collectionView.delegate = collectionViewManager
-        collectionView.isScrollEnabled = true
-    
-        for i in 0..<games.count {
-            if favoritesService.checkFavorites(data: .init(gameId: games[i].gameId)) {
-                collectionViewManager.savedGames.append(games[i])
+    func fillData(completionType: CompletionType<[Game]>) {
+        switch completionType {
+        case .success(let games):
+            collectionViewManager.savedGames = []
+            collectionView.dataSource = collectionViewManager
+            collectionView.delegate = collectionViewManager
+            collectionView.isScrollEnabled = true
+        
+            for i in 0..<games.count {
+                if favoritesService.checkFavorites(data: .init(gameId: games[i].gameId)) {
+                    collectionViewManager.savedGames.append(games[i])
+                }
             }
+            collectionView.reloadData()
+            self.collectionView.refreshControl?.endRefreshing()
+        case .error(_):
+            break
         }
-        collectionView.reloadData()
-        self.collectionView.refreshControl?.endRefreshing()
     }
     
     @objc func refresh(_ sender: AnyObject) {
