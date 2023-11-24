@@ -82,12 +82,6 @@ class GameDescriptionViewController: UIViewController {
         }
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        self.navigationController?.navigationBar.prefersLargeTitles = false
-//    }
-    
-    
     func fillData(completionType: CompletionType<GameInformation>) {
         switch completionType {
         case .success(let gameInformation):

@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 struct Game: Codable {
     let name: String
     let gameId: Int

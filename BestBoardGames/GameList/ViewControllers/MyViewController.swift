@@ -38,8 +38,11 @@ final class MyViewController: UIViewController {
     private lazy var skeletonTableViewDelegate = SkeletonTableViewDelegate()
     
     private let service = GameListService()
-    
     private let warningView = WarningView(frame: .zero)
+    
+    private lazy var filterBarButtonItem = UIBarButtonItem(image: UIImage(named: "filter"),
+                                                      style: .plain, target: self,
+                                                      action: #selector(onFilterButtonClicked))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +52,8 @@ final class MyViewController: UIViewController {
         view.addSubview(warningView)
         
         warningView.reload = reload
+        
+        self.navigationItem.rightBarButtonItem  = filterBarButtonItem
         
         view.backgroundColor = .white
         tableView.backgroundColor = UIColor(hex: 0xD9D9D9)
@@ -116,6 +121,11 @@ final class MyViewController: UIViewController {
     
     func reload() {
         state = .loading
+    }
+    
+    @objc func onFilterButtonClicked(_ sender: Any){
+        let filterVC = FilterVC()
+        present(filterVC, animated: true)
     }
 }
 

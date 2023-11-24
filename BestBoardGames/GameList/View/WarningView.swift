@@ -31,7 +31,7 @@ class WarningView: UIView {
         let button = UIButton()
         button.backgroundColor = UIColor(hex: 0x219653)
         button.setTitleColor(.white, for: .normal)
-        button.setTitle("Перезагрузить", for: .normal)
+        button.setTitle("Reload", for: .normal)
         button.addTarget(self, action: #selector(reloadPage), for: .touchUpInside)
        
         return button
@@ -59,10 +59,7 @@ class WarningView: UIView {
     }
     
    private func addConstraints(){
-       snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-        
+
         warningImage.snp.makeConstraints { make in
             make.center.equalToSuperview()
             make.size.equalTo(170)
