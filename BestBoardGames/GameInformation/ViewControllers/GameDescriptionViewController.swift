@@ -143,6 +143,7 @@ class GameDescriptionViewController: UIViewController {
             make.top.equalTo(self.nameLabel.snp.top)
             make.right.equalToSuperview()
         }
+        ratingLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
     }
     
     @objc func addFavorites(sender: UIButton) {
