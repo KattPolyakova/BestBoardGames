@@ -9,15 +9,6 @@ import UIKit
 
 class FavoritesService {
     
-    
-//    func getFavoritesData() -> FavoritesData? { //  извлечение данных
-//        
-//        let array = UserDefaults.standard.array(forKey: "gameId")
-//        
-//        
-//        return data
-//    }
-    
     var gameCount: Int {
         let count = UserDefaults.standard.array(forKey: "gameId")?.count
         UserDefaults.standard.array(forKey: "gameId")?.forEach({ item in

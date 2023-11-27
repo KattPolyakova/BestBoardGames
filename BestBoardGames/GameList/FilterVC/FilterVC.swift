@@ -11,6 +11,33 @@ import SnapKit
 
 class FilterVC: UIViewController {
     
+    var games: [Game] = []
+    var showFilteredGames: (([Game]) -> ())? = nil
+
+    var minYearPublished: Int {
+        var minYearPublished = Calendar.current.component(.year, from: Date())
+        for game in games {
+            if game.yearPublished <= minYearPublished {
+                minYearPublished = game.yearPublished
+            }
+        }
+        return minYearPublished
+    }
+    
+    private let titleLabel = {
+        let label = UILabel()
+        label.text = "Filtres"
+        label.font = UIFont(name: "Arial-BoldMT", size: 25)
+        return label
+    }()
+    
+    private lazy var closeButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named:"Close Button"), for: .normal)
+        button.addTarget(self, action: #selector(closeScreen), for: .touchUpInside)
+        return button
+    }()
+    
     private let releaseDateLabel = {
         let label = UILabel()
         label.text = "Release date"
@@ -31,17 +58,18 @@ class FilterVC: UIViewController {
     
     private let firstYearTextField = {
         let textField = UITextField()
-        textField.placeholder = "  min year"
         textField.borderStyle = .roundedRect
         textField.backgroundColor = .white
+        textField.keyboardType = .numberPad
         return textField
     }()
     
     private let lastYearTextField = {
         let textField = UITextField()
-        textField.placeholder = "  max year"
+        textField.placeholder = "  \(Calendar.current.component(.year, from: Date()))"
         textField.borderStyle = .roundedRect
         textField.backgroundColor = .white
+        textField.keyboardType = .numberPad
         return textField
     }()
     
@@ -49,7 +77,7 @@ class FilterVC: UIViewController {
         let button = UIButton()
         button.backgroundColor = UIColor(hex: 0x219653)
         button.setTitle("Apply", for: .normal)
-        button.addTarget(self, action: #selector(reloadPage), for: .touchUpInside)
+        button.addTarget(self, action: #selector(applyFilters), for: .touchUpInside)
         return button
     }()
     
@@ -77,6 +105,7 @@ class FilterVC: UIViewController {
         super.viewDidLoad()
         
         self.navigationItem.leftBarButtonItem?.title = "Filters"
+        firstYearTextField.placeholder = "  \(minYearPublished)"
         
         view.backgroundColor = UIColor(hex: 0xDEDEDE)
         addSubViews()
@@ -85,6 +114,8 @@ class FilterVC: UIViewController {
     
     private func addSubViews() {
         view.addSubview(stackView)
+        view.addSubview(titleLabel)
+        view.addSubview(closeButton)
         stackView.addArrangedSubview(releaseDateLabel)
         stackView.addArrangedSubview(fromStackView)
         stackView.addArrangedSubview(toStackView)
@@ -99,6 +130,17 @@ class FilterVC: UIViewController {
     }
     
     private func addConstraints() {
+        
+        titleLabel.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(19)
+            make.top.equalToSuperview().offset(15)
+        }
+        
+        closeButton.snp.makeConstraints { make in
+            make.right.equalToSuperview().offset(-19)
+            make.centerY.equalTo(titleLabel)
+        }
+        
         stackView.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(19)
             make.right.equalToSuperview().offset(-19)
@@ -118,7 +160,20 @@ class FilterVC: UIViewController {
         }
     }
     
-    @objc func reloadPage() {
-        print("ok")
+    @objc func applyFilters() {
+        let textFromTextfield: String = firstYearTextField.text ?? ""
+        let firstNumber: Int = Int(textFromTextfield) ?? minYearPublished
+        let lastNumber: Int = Int(lastYearTextField.text ?? "") ?? (Calendar.current.component(.year, from: Date()))
+ 
+        let filteredGames = games.filter { game in
+            game.yearPublished >= firstNumber && game.yearPublished <= lastNumber
+        }
+        showFilteredGames?(filteredGames)
+        closeScreen()
     }
+    
+    @objc func closeScreen() {
+        dismiss(animated: true)
+    }
+    
 }

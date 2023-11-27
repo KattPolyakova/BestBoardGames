@@ -53,6 +53,7 @@ final class MyViewController: UIViewController {
         
         warningView.reload = reload
         
+        
         self.navigationItem.rightBarButtonItem  = filterBarButtonItem
         
         view.backgroundColor = .white
@@ -99,14 +100,17 @@ final class MyViewController: UIViewController {
         tableView.isScrollEnabled = false
         warningView.isHidden = true
         tableView.isHidden = false
+        filterBarButtonItem.isHidden = true
         tableView.reloadData()
     }
     
     func showGames(games: [Game]) {
         warningView.isHidden = true
         tableView.isHidden = false
+        filterBarButtonItem.isHidden = false
 
         self.tableViewDataSource.savedGames = games
+        self.tableViewDataSource.filteredGames = games
         tableView.dataSource = tableViewDataSource
         tableView.delegate = tableViewDelegate
         tableView.isScrollEnabled = true
@@ -116,6 +120,7 @@ final class MyViewController: UIViewController {
     func showWarning(text: String) {
         warningView.isHidden = false
         tableView.isHidden = true
+        filterBarButtonItem.isHidden = true
         warningView.updateText(text: text)
     }
     
@@ -125,7 +130,14 @@ final class MyViewController: UIViewController {
     
     @objc func onFilterButtonClicked(_ sender: Any){
         let filterVC = FilterVC()
+        filterVC.games = tableViewDataSource.savedGames
+        filterVC.showFilteredGames = showFilteredGames
         present(filterVC, animated: true)
+    }
+    
+    func showFilteredGames(games: [Game]) {
+        tableViewDataSource.filteredGames = games
+        self.tableView.reloadData()
     }
 }
 
@@ -137,7 +149,7 @@ extension MyViewController: GameListDelegate {
     func goToNextVC(row: Int) {
         
         let vc = GameDescriptionViewController()
-        vc.gameId = tableViewDataSource.savedGames[row].gameId
-        navigationController?.pushViewController(vc, animated: true)   
+        vc.gameId = tableViewDataSource.filteredGames[row].gameId
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

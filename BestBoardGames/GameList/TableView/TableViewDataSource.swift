@@ -11,10 +11,11 @@ import SnapKit
 class TableViewDataSource: NSObject, UITableViewDataSource {
     
     var savedGames: [Game] = []
+    var filteredGames: [Game] = []
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as? CustomTableViewCell else { return UITableViewCell() }
-        let game = savedGames[indexPath.row]
+        let game = filteredGames[indexPath.row]
         cell.configure(game: CustomTableViewCell.ViewModel(
             name: game.name,
             yearPublished: game.yearPublished,
@@ -27,7 +28,7 @@ class TableViewDataSource: NSObject, UITableViewDataSource {
     @objc func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        switch tableView {
        case tableView:
-          return savedGames.count
+          return filteredGames.count
         default:
           return 0
        }
