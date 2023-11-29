@@ -14,6 +14,8 @@ class GameDescriptionViewController: UIViewController {
     
     var gameId = 0
     
+    private let spinner = UIActivityIndicatorView(style: .large)
+    
     private let image = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFill
@@ -67,8 +69,9 @@ class GameDescriptionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        spinner.startAnimating()
         service.fetchInformation(with: String(gameId), completion: fillData)
-        view.backgroundColor = .white
+        scrollView.backgroundColor = .white
         
         addSubViews()
         addConstraints()
@@ -85,6 +88,7 @@ class GameDescriptionViewController: UIViewController {
     func fillData(completionType: CompletionType<GameInformation>) {
         switch completionType {
         case .success(let gameInformation):
+            spinner.stopAnimating()
             self.nameLabel.text = gameInformation.name
             self.ratingLabel.text = String(format: "%.2f", gameInformation.rating)
             self.ratingLabel.textColor = getColor(by: gameInformation.rating)
@@ -114,10 +118,9 @@ class GameDescriptionViewController: UIViewController {
         stackView2.addArrangedSubview(UIView())
         navigationItem.setRightBarButtonItems([favoriteButton], animated: true)
         view.addSubview(scrollView)
+        view.addSubview(spinner)
     }
-    
-
-    
+  
     private func addConstraints() {
         scrollView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -143,6 +146,10 @@ class GameDescriptionViewController: UIViewController {
             make.top.equalTo(self.nameLabel.snp.top)
             make.right.equalToSuperview()
         }
+        spinner.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
+        
         ratingLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
     }
     

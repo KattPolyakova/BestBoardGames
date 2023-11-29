@@ -5,7 +5,6 @@
 //  Created by Kate on 11.09.2023.
 //
 
-import Foundation
 import Alamofire
 
 class GameListService: CommonService<[Game]> {

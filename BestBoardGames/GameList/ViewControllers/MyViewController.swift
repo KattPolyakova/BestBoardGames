@@ -92,9 +92,8 @@ final class MyViewController: UIViewController {
     }
     
     func showLoading() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [self] in
-            self.service.fetchInformation(with: "", completion: fillData)
-        }
+        service.fetchInformation(with: "", completion: fillData)
+        
         tableView.dataSource = skeletonTableViewDataSource
         tableView.delegate = skeletonTableViewDelegate
         tableView.isScrollEnabled = false

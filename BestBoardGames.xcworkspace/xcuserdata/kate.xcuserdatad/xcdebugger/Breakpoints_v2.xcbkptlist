@@ -348,8 +348,8 @@
             filePath = "BestBoardGames/GameInformation/ViewControllers/GameDescriptionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
             landmarkName = "addFavorites(sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -364,8 +364,8 @@
             filePath = "BestBoardGames/GameInformation/ViewControllers/GameDescriptionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
             landmarkName = "addFavorites(sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -384,54 +384,6 @@
             endingLineNumber = "78"
             landmarkName = "fillData(completionType:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FE8AFFCB-17CD-4B18-8D4D-2F5FC552DEA2"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BestBoardGames/GameInformation/ViewControllers/GameDescriptionViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "FE8AFFCB-17CD-4B18-8D4D-2F5FC552DEA2 - fee738f7b0f69eb4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BestBoardGames.GameDescriptionViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "BestBoardGames"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kate/Desktop/SWIFT/BestBoardGames/BestBoardGames/GameInformation/ViewControllers/GameDescriptionViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "140">
-               </Location>
-               <Location
-                  uuid = "FE8AFFCB-17CD-4B18-8D4D-2F5FC552DEA2 - 916ff0bcfcbee1b4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "implicit closure #2 (BestBoardGames.GameInformation) -&gt; () in implicit closure #1 (BestBoardGames.GameDescriptionViewController) -&gt; (BestBoardGames.GameInformation) -&gt; () in BestBoardGames.GameDescriptionViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "BestBoardGames"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kate/Desktop/SWIFT/BestBoardGames/BestBoardGames/GameInformation/ViewControllers/GameDescriptionViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "44">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -668,6 +620,22 @@
             startingLineNumber = "44"
             endingLineNumber = "44"
             landmarkName = "init(frame:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "443352B9-64C9-4515-8EB5-2C2436FB72E5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BestBoardGames/GameInformation/ViewControllers/GameDescriptionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "addSubViews()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
